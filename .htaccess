@@ -1,0 +1,8 @@
+RewriteEngine on
+
+RewriteRule favicon\.ico$ - [R=404,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|media|static|images|css|js|robots\.txt|favicon\.ico)
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
